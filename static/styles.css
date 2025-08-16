@@ -1,0 +1,18 @@
+table, td, th {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+table{
+    width: 100%;
+}
+
+.plot {
+    width: 70%;
+}
+
+.log {
+    width: 30%;
+}
+
