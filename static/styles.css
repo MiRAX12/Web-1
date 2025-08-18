@@ -1,7 +1,16 @@
 table, td, th {
-    border: 1px solid;
+    border: 1px solid #434645;
     border-collapse: collapse;
     padding: 10px;
+}
+
+*{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Times New Roman", monospace;
+    color: #9cc0d6;
+    background-color: #1f1f1f;
+    border-color: black;
 }
 
 table{
@@ -16,3 +25,61 @@ table{
     width: 30%;
 }
 
+form > fieldset {
+    text-align: center;
+}
+
+form[method=post]{
+    font-family: Arial,monospace;
+    font-size: 16px
+}
+
+input#Y_val {
+    border-radius: 20px;
+    border-width: 1px;
+    padding: 4px;
+}
+
+legend::first-letter{
+    font-size: 25px ;
+}
+
+.send-button{
+    background-color: #56e456;
+    border-radius: 10px;
+    border: 2px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #434242;
+    box-shadow:
+            inset 2px 2px 3px rgb(255 255 255 / 0.6),
+            inset -2px -2px 3px rgb(0 0 0 / 0.6);
+}
+
+.plot img{
+    display: block;
+    margin: 0 auto;
+}
+
+.basic{
+    display: block;
+}
+
+.send-button:hover{
+    background-color: #3fd662;
+}
+
+.send-button:active{
+    box-shadow:
+            inset -2px -2px 3px rgb(255 255 255 / 0.6),
+            inset 2px 2px 3px rgb(0 0 0 / 0.6);
+}
+
+.page-title{
+    font-family: Impact, monospace;
+    color: white;
+    -webkit-text-stroke: 1px #5c5e5d;
+    font-size: 28px;
+    font-weight: normal;
+}

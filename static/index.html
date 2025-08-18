@@ -1,82 +1,89 @@
 <!doctype html>
-<html lang = "en-US">
-    <head>
-        <meta charset="utf-8"/>
-        <title>
-            1st laba.com
-        </title>
-        <meta name="author" content="MiRAX">
-        <meta name="description"
-              content="An easy way to determine if you
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <title>
+        1st laba.com
+    </title>
+    <meta name="author" content="MiRAX">
+    <meta name="description"
+          content="An easy way to determine if you
 can hit in a small blue area">
-        <link rel="stylesheet" href="styles.css"/>
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
-    </head>
-    <body>
-        <table><!--Переделать в CSS там же выравнивание!-->
-            <tr>
-                <th colspan="2">Нагорный Николай Викторович Группа:Р3217 Вариант:488778</th>
-            </tr>
-            <tr>
-                <td class="plot">Тут будет график</td>
-                <td class="log">
-                    <table>
-                        <tr>
-                            <th>X</th>
-                            <th>Y</th>
-                            <th>R</th>
-                            <th>Result</th>
-                            <th>Time</th> <!--Задать классы и дать свою ширину!-->
-                            <th>Execution time</th>
-                        </tr>
-                        <tr>
-                            <td>kek</td>
-                            <td>kek</td>
-                            <td>kek</td>
-                            <td>kek</td>
-                            <td>kek</td>
-                            <td>kek</td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr><td colspan="2">
-                <form method="post">
-                    <fieldset>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <script async src="script.js"></script>
+</head>
+<body>
+<table><!--Переделать в CSS там же выравнивание!-->
+    <tr>
+        <th class="page-title" colspan="2">Нагорный Николай Викторович Группа:Р3217 Вариант:488778</th>
+    </tr>
+    <tr>
+        <td class="plot">
+            <img src="images/plot.png" alt="тут будет график"/>
+        </td>
+        <td class="log">
+            <table>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Result</th>
+                    <th>Time</th> <!--Задать классы и дать свою ширину!-->
+                    <th>Execution time</th>
+                </tr>
+                <tr>
+                    <td>kek</td>
+                    <td>kek</td>
+                    <td>kek</td>
+                    <td>kek</td>
+                    <td>kek</td>
+                    <td>kek</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <form method="post">
+                <fieldset>
                     <legend>Выберите параметр и координаты</legend>
-                        <p>
-                            <label>Выберите X:
-                                <select id="X_val" name="X_val" required>
-                                    <option value="-2">-2</option>
-                                    <option value="-1.5">-1.5</option>
-                                    <option value="-1">-1</option>
-                                    <option value="-0.5">-0.5</option>
-                                    <option value="0">0</option>
-                                    <option value="0.5">0.5</option>
-                                    <option value="1">1</option>
-                                    <option value="1.5">1.5</option>
-                                    <option value="2">2</option>
-                                </select>
-                            </label>
-                        </p>
-                        <p>
-                            <label>Выберите Y:
-                                <input type="text" id="Y_val" name="Y_val" placeholder="Значение Y" pattern="^-?\d+$" minlength="1"
-                                       required>
-                            </label>
-                        </p>
-                        <p>
-                            <label>Выберите R:
+                    <p>
+                        <label>Выберите X:
+                            <select id="X_val" name="X_val" required>
+                                <option value="-2">-2</option>
+                                <option value="-1.5">-1.5</option>
+                                <option value="-1">-1</option>
+                                <option value="-0.5">-0.5</option>
+                                <option value="0">0</option>
+                                <option value="0.5">0.5</option>
+                                <option value="1">1</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2">2</option>
+                            </select>
+                        </label>
+                    </p>
+                    <p>
+                        <label>Выберите Y:
+                            <input type="text" id="Y_val" name="Y_val" placeholder="Значение Y" pattern="^-?\d+$"
+                                   minlength="1"
+                                   required>
+                        </label>
+                    </p>
+                    <p>
+                        <label>Выберите R:
                             <input type="checkbox" name="R_val" id="1" value="1"><label for="1">1</label>
                             <input type="checkbox" name="R_val" id="1.5" value="1.5"><label for="1.5">1.5</label>
                             <input type="checkbox" name="R_val" id="2" value="2"><label for="2">2</label>
                             <input type="checkbox" name="R_val" id="2.5" value="2.5"><label for="2.5">2.5</label>
                             <input type="checkbox" name="R_val" id="3" value="3"><label for="3">3</label>
                         </label>
-                        </p>
-                    </fieldset>
-                </form>
-            </td></tr>
-        </table>
-    </body>
+                    </p>
+                    <button class="send-button">Отправить</button>
+                </fieldset>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
 </html>
