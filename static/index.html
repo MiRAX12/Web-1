@@ -45,7 +45,7 @@ can hit in a small blue area">
     </tr>
     <tr>
         <td colspan="2">
-            <form method="post">
+            <form id = "plot-form" method="post">
                 <fieldset>
                     <legend>Выберите параметр и координаты</legend>
                     <p>
@@ -65,21 +65,21 @@ can hit in a small blue area">
                     </p>
                     <p>
                         <label>Выберите Y:
-                            <input type="text" id="Y_val" name="Y_val" placeholder="Значение Y" pattern="^-?\d+$"
+                            <input type="text" id="Y_val" name="Y_val" placeholder="Значение Y"
                                    minlength="1"
                                    required>
                         </label>
                     </p>
                     <p>
-                        <label>Выберите R:
-                            <input type="checkbox" name="R_val" id="1" value="1"><label for="1">1</label>
-                            <input type="checkbox" name="R_val" id="1.5" value="1.5"><label for="1.5">1.5</label>
-                            <input type="checkbox" name="R_val" id="2" value="2"><label for="2">2</label>
-                            <input type="checkbox" name="R_val" id="2.5" value="2.5"><label for="2.5">2.5</label>
-                            <input type="checkbox" name="R_val" id="3" value="3"><label for="3">3</label>
-                        </label>
+                        <div class="checkbox-required">Выберите R:
+                            <input type="checkbox" name="R_val" id="r1" value="1"><label for="r1">1</label>
+                            <input type="checkbox" name="R_val" id="r1.5" value="1.5"><label for="r1.5">1.5</label>
+                            <input type="checkbox" name="R_val" id="r2" value="2"><label for="r2">2</label>
+                            <input type="checkbox" name="R_val" id="r2.5" value="2.5"><label for="r2.5">2.5</label>
+                            <input type="checkbox" name="R_val" id="r3" value="3"><label for="r3">3</label>
+                </div>
                     </p>
-                    <button class="send-button">Отправить</button>
+                    <button class="send-button" id ="send-button">Отправить</button>
                 </fieldset>
             </form>
         </td>
