@@ -84,7 +84,7 @@ function addToHistory(e) {
     if (validateForm(e)) {
         e.preventDefault()
         const xVal = document.getElementById("xVal").value
-        const yVal = xField.value.trim()
+        const yVal = document.querySelector('input[name="yVal"]:checked').value;
         const rVal = currentChecked.value;
         const newRow = document.createElement("tr")
         table.insertBefore(newRow, table.rows[1])
