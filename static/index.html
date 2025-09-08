@@ -11,71 +11,64 @@
 can hit in a small blue area">
     <link rel="stylesheet" href="styles.css"/>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
-    <script async src="script.js"></script>
+    <script async src="validation.js"></script>
+
 </head>
+
 <body>
-<table><!--Переделать в CSS там же выравнивание!-->
-    <tr>
-        <th class="page-title" colspan="2">Нагорный Николай Викторович Группа:Р3217 Вариант:488778</th>
-    </tr>
-    <tr>
-        <td class="plot">
-            <img src="images/plot.png" alt="тут будет график"/>
-        </td>
-        <td class="log">
-            <table class="logTable">
-                <tr>
-                    <th>X</th>
-                    <th>Y</th>
-                    <th>R</th>
-                    <th>Result</th>
-                    <th>Time</th>
-                    <th>Execution time</th>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <form id = "plot-form" method="post">
-                <fieldset>
-                    <legend>Выберите параметр и координаты</legend>
-                    <p>
-                        <label>Выберите X:
-                            <select id="xVal" name="xVal" required>
-                                <option value="-2">-2</option>
-                                <option value="-1.5">-1.5</option>
-                                <option value="-1">-1</option>
-                                <option value="-0.5">-0.5</option>
-                                <option value="0">0</option>
-                                <option value="0.5">0.5</option>
-                                <option value="1">1</option>
-                                <option value="1.5">1.5</option>
-                                <option value="2">2</option>
-                            </select>
-                        </label>
-                    </p>
-                    <p>
-                        <label>Выберите Y:
-                            <input type="text" id="yVal" name="yVal" placeholder="Значение Y"
-                                   minlength="1"
-                                   required>
-                        </label>
-                    </p>
-                    <p>
-                        <div class="checkbox-required">Выберите R:
-                            <input type="checkbox" name="rVal" id="r1" value="1"><label for="r1">1</label>
-                            <input type="checkbox" name="rVal" id="r1.5" value="1.5"><label for="r1.5">1.5</label>
-                            <input type="checkbox" name="rVal" id="r2" value="2"><label for="r2">2</label>
-                            <input type="checkbox" name="rVal" id="r2.5" value="2.5"><label for="r2.5">2.5</label>
-                            <input type="checkbox" name="rVal" id="r3" value="3"><label for="r3">3</label>
-                        </div>
-                    </p>
-                    <button class="send-button" id ="send-button">Отправить</button>
-                </fieldset>
-            </form>
-        </td>
-    </tr>
-</table>
+<div class="main">
+    <div class="header">Нагорный Николай Викторович Группа:Р3217 Вариант:466823</div>
+    <div class="content">
+        <div class="plot">
+            <canvas id="canvas" width="500" height="500"></canvas>
+            <script src="canvas.js"></script>
+        </div>
+        <div class="log">
+                <table>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Result</th>
+                        <th>Time</th>
+                        <th>Execution time</th>
+                    </tr>
+                </table>
+
+        </div>
+    </div>
+    <div class="form">
+        <div class="plotForm">
+        <form id="plot-form" method="post">
+            <fieldset>
+                <legend>Выберите параметр и координаты</legend>
+                    <div>
+                        <label for="yVal">Выберите X: </label>
+                        <input type="text" id="yVal" name="xVal" placeholder="Значение X" minlength="1" required>
+                    </div>
+                <div> Выберите Y:
+                    <input type="radio" name="yVal" value="-3" id="y-3" required><label for="y-3">-3</label>
+                    <input type="radio" name="yVal" value="-2" id="y-2"><label for="y-2">-2</label>
+                    <input type="radio" name="yVal" value="-1" id="y-1"><label for="y-1">-1</label>
+                    <input type="radio" name="yVal" value="0" id="y0"><label for="y0">0</label>
+                    <input type="radio" name="yVal" value="1" id="y1"><label for="y1">1</label>
+                    <input type="radio" name="yVal" value="2" id="y2"><label for="y2">2</label>
+                    <input type="radio" name="yVal" value="3" id="y3"><label for="y3">3</label>
+                    <input type="radio" name="yVal" value="4" id="y4"><label for="y4">4</label>
+                    <input type="radio" name="yVal" value="5" id="y5"><label for="y5">5</label>
+                </div>
+                <div class="checkbox-required">Выберите R:
+                    <input type="checkbox" value="1" id="r1"><label for="r1">1</label>
+                    <input type="checkbox" value="1.5" id="r1.5"><label for="r1.5">1.5</label>
+                    <input type="checkbox" value="2" id="r2"><label for="r2">2</label>
+                    <input type="checkbox" value="2.5" id="r2.5"><label for="r2.5">2.5</label>
+                    <input type="checkbox" value="3" id="r3"><label for="r3">3</label>
+                </div>
+                <button class="send-button" id="send-button">Отправить</button>
+            </fieldset>
+        </form>
+        </div>
+
+    </div>
 </body>
 </html>

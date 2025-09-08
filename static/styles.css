@@ -1,38 +1,87 @@
-table, td, th {
-    border: 1px solid #434645;
-    border-collapse: collapse;
-    padding: 10px;
-}
-
 *{
-    font-size: 16px;
-    font-weight: bold;
-    font-family: "Times New Roman", monospace;
-    color: #9cc0d6;
-    background-color: #1f1f1f;
-    border-color: black;
+    background: #1f1f1f;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #a2bed4;
 }
-
-table{
-    width: 100%;
-}
-
-.plot {
-    width: 70%;
-}
-
-.log {
-    width: 30%;
-}
-
-form > fieldset {
+.header{
+    background: rgba(80, 85, 90, 0.58);
+    border-radius: 40px;
+    font-family: Impact, sans-serif;
+    font-size: 28px;
+    color: white;
+    -webkit-text-stroke: 1px #5c5e5d;
     text-align: center;
 }
 
-form[method=post]{
-    font-family: Arial,monospace;
-    font-size: 16px
+.main{
+    display: flex;
+    flex-direction: column;
 }
+
+.content{
+    display: flex;
+}
+
+.plot{
+    border-radius: 40px;
+    background: rgba(80, 85, 90, 0.58);
+    margin: 10px;
+    text-align: center;
+    flex: 1;
+    height: 500px;
+}
+
+#canvas{
+    display: inline;
+    background: rgba(80, 85, 90, 0);
+
+}
+
+.log{
+    background: rgba(80, 85, 90, 0.58);
+    margin: 10px;
+    border-radius: 40px;
+    display: flex;
+    flex: 1;
+    height: 500px;
+}
+
+table, td, th {
+    border: 2px solid #434645;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: auto;
+    font-size: 16px;
+}
+
+.form{
+    background: rgba(80, 85, 90, 0.58);
+    border-radius: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 25px;
+    display: flex;
+}
+
+.plotForm{
+    margin: auto;
+
+}
+
+.plotForm div{
+    margin: 12px;
+}
+
+.form * {
+    background: rgba(80, 85, 90, 0);
+}
+
+form[method=post]{
+    flex-direction: column;
+    font-family: Arial, monospace;
+    font-size: 16px;
+    }
 
 input#yVal {
     border-radius: 20px;
@@ -57,15 +106,6 @@ legend::first-letter{
             inset -2px -2px 3px rgb(0 0 0 / 0.6);
 }
 
-.plot img{
-    display: block;
-    margin: 0 auto;
-}
-
-.basic{
-    display: block;
-}
-
 .send-button:hover{
     background-color: #3fd662;
 }
@@ -76,10 +116,3 @@ legend::first-letter{
             inset 2px 2px 3px rgb(0 0 0 / 0.6);
 }
 
-.page-title{
-    font-family: Impact, monospace;
-    color: white;
-    -webkit-text-stroke: 1px #5c5e5d;
-    font-size: 28px;
-    font-weight: normal;
-}

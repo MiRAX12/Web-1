@@ -12,21 +12,7 @@ function uncheckLast(){
 
 checkBoxes.forEach((element) => element.addEventListener("change", uncheckLast))
 
-const textField = document.querySelector("input[type=text]")
 const rField = document.querySelector("#r3")
-const plotForm = document.querySelector("#plot-form")
-
-function validateY() {
-        const num = textField.value.trim()
-        if (/^-?\d?(\.\d+)?$/.test(num)){
-            if (num >= -3 && num <= 5){
-                textField.setCustomValidity("")
-                return true
-            }
-        }
-        textField.setCustomValidity("Введите число от -3 до 5")
-        return false
-    }
 
 function validateR(){
     const checked = document.querySelectorAll('input[type=checkbox]:checked');
@@ -40,21 +26,56 @@ function validateR(){
     }
 }
 
+checkBoxes.forEach((element) => element.addEventListener("change", validateR))
+
+const xField = document.querySelector("input[type=text]")
+
+function validateX(e) {
+    const currentValue = xField.value.trim()
+    const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"]
+    if (allowedKeys.includes(e.key)) return;
+    const start = xField.selectionStart
+    let newValue
+    if (currentValue.length > 32) {
+        e.preventDefault()
+        return;
+    }
+    if (/[0-9]/.test(e.key)) {
+        if (currentValue[0] === "0" && currentValue[1] !== "." && currentValue[1] !== ",") {
+            e.preventDefault()
+            return
+        }
+        newValue = currentValue.slice(0, start) + e.key
+    } else if ((e.key === "," || e.key === ".") && !/[.,]/.test(currentValue)) {
+        if (start === 0) {
+            e.preventDefault()
+            return;
+        }
+        newValue = currentValue.slice(0, start) + "."
+    } else if (e.key === "-" && start === 0) {
+        newValue = "-" + currentValue
+    } else {
+        e.preventDefault()
+        return;
+    }
+    const floatValue = parseFloat(newValue);
+    if (!isNaN(floatValue) && (floatValue <= -3 || floatValue >= 3)) {
+        e.preventDefault();
+    }
+}
+
+xField.addEventListener("keydown", validateX)
+
 function validateForm(e){
-    if (!validateR() || !validateY()){
+    if (!validateR()){
         rField.reportValidity()
-        textField.reportValidity()
         e.preventDefault()
         return false
     }
     else return true;
 }
 
-checkBoxes.forEach((element) => element.addEventListener("change", validateR))
-textField.addEventListener("input", validateY)
-
 const table = document.querySelector(".logTable")
-
 
 function addToHistory(e) {
     if (table.childElementCount > 5) {
@@ -63,7 +84,7 @@ function addToHistory(e) {
     if (validateForm(e)) {
         e.preventDefault()
         const xVal = document.getElementById("xVal").value
-        const yVal = textField.value.trim()
+        const yVal = xField.value.trim()
         const rVal = currentChecked.value;
         const newRow = document.createElement("tr")
         table.insertBefore(newRow, table.rows[1])
@@ -82,4 +103,6 @@ function addToHistory(e) {
     }
 }
 
+const plotForm = document.querySelector("#plot-form")
 plotForm.addEventListener("submit", addToHistory)
+
