@@ -11,7 +11,8 @@
 can hit in a small blue area">
     <link rel="stylesheet" href="styles.css"/>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
-    <script async src="validation.js"></script>
+    <script src="validation.js" type="module"></script>
+    <script src="script.js" type="module"></script>
 
 </head>
 
@@ -23,7 +24,43 @@ can hit in a small blue area">
             <canvas id="canvas" width="500" height="500"></canvas>
             <script src="canvas.js"></script>
         </div>
-        <div class="log">
+        <div class="right">
+            <div class="formContainer">
+                <div class="form">
+                <form class="plotForm" method="post">
+                    <fieldset>
+                        <legend>Выберите параметр и координаты</legend>
+                        <div>
+                            <label for="xVal">Выберите X: </label>
+                            <input type="text" id="xVal" name="xVal" placeholder="Значение X" minlength="1" required>
+                        </div>
+                        <div> Выберите Y:
+                            <input type="radio" name="yVal" value="-3" id="y-3" required><label for="y-3">-3</label>
+                            <input type="radio" name="yVal" value="-2" id="y-2"><label for="y-2">-2</label>
+                            <input type="radio" name="yVal" value="-1" id="y-1"><label for="y-1">-1</label>
+                            <input type="radio" name="yVal" value="0" id="y0"><label for="y0">0</label>
+                            <input type="radio" name="yVal" value="1" id="y1"><label for="y1">1</label>
+                            <input type="radio" name="yVal" value="2" id="y2"><label for="y2">2</label>
+                            <input type="radio" name="yVal" value="3" id="y3"><label for="y3">3</label>
+                            <input type="radio" name="yVal" value="4" id="y4"><label for="y4">4</label>
+                            <input type="radio" name="yVal" value="5" id="y5"><label for="y5">5</label>
+                        </div>
+                        <div class="checkbox-required">Выберите R:
+                            <input type="checkbox" value="1" id="r1"><label for="r1">1</label>
+                            <input type="checkbox" value="1.5" id="r1.5"><label for="r1.5">1.5</label>
+                            <input type="checkbox" value="2" id="r2"><label for="r2">2</label>
+                            <input type="checkbox" value="2.5" id="r2.5"><label for="r2.5">2.5</label>
+                            <input type="checkbox" value="3" id="r3"><label for="r3">3</label>
+                        </div>
+                        <div class="send">
+                            <button class="sendButton">Отправить</button>
+                        </div>
+                    </fieldset>
+                </form>
+                </div>
+            </div>
+            <div class="log">
+                <div class="tableContainer">
                 <table class="logTable">
                     <tr>
                         <th>X</th>
@@ -34,40 +71,10 @@ can hit in a small blue area">
                         <th>Execution time</th>
                     </tr>
                 </table>
-
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form">
-        <div class="plotForm">
-        <form id="plot-form" method="post">
-            <fieldset>
-                <legend>Выберите параметр и координаты</legend>
-                    <div>
-                        <label for="xVal">Выберите X: </label>
-                        <input type="text" id="xVal" name="xVal" placeholder="Значение X" minlength="1" required>
-                    </div>
-                <div> Выберите Y:
-                    <input type="radio" name="yVal" value="-3" id="y-3" required><label for="y-3">-3</label>
-                    <input type="radio" name="yVal" value="-2" id="y-2"><label for="y-2">-2</label>
-                    <input type="radio" name="yVal" value="-1" id="y-1"><label for="y-1">-1</label>
-                    <input type="radio" name="yVal" value="0" id="y0"><label for="y0">0</label>
-                    <input type="radio" name="yVal" value="1" id="y1"><label for="y1">1</label>
-                    <input type="radio" name="yVal" value="2" id="y2"><label for="y2">2</label>
-                    <input type="radio" name="yVal" value="3" id="y3"><label for="y3">3</label>
-                    <input type="radio" name="yVal" value="4" id="y4"><label for="y4">4</label>
-                    <input type="radio" name="yVal" value="5" id="y5"><label for="y5">5</label>
-                </div>
-                <div class="checkbox-required">Выберите R:
-                    <input type="checkbox" value="1" id="r1"><label for="r1">1</label>
-                    <input type="checkbox" value="1.5" id="r1.5"><label for="r1.5">1.5</label>
-                    <input type="checkbox" value="2" id="r2"><label for="r2">2</label>
-                    <input type="checkbox" value="2.5" id="r2.5"><label for="r2.5">2.5</label>
-                    <input type="checkbox" value="3" id="r3"><label for="r3">3</label>
-                </div>
-                <button class="send-button" id="send-button">Отправить</button>
-            </fieldset>
-        </form>
-        </div>
 
     </div>
 </body>
